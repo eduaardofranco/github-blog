@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         font-family: 'Nunito', sans-serif;
         line-height: 160%;
+        background: ${props => props.theme['black-900']};
+        color: ${props => props.theme['gray-500']};
     }
     :focus {
         outline: 0;
