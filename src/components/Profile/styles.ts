@@ -54,6 +54,8 @@ export const Title = styled.div`
 export const Image = styled.img`
     width: 148px;
     border-radius: 8px;
+    border: 2px solid ${props => props.theme['blue']};
+    border-radius: 999px;
 `;
 export const Details = styled.div`
     display: block;

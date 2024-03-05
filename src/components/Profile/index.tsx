@@ -6,7 +6,7 @@ import { MdPeopleAlt } from 'react-icons/md'
 export function Profile() {
     return(
         <Container>
-            <Image src="/src/assets/avatar.jpg" />
+            <Image src="https://github.com/eduaardofranco.png" />
             <Details>
                 <Title>
                     <h2>Eduardo Franco</h2>
