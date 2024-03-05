@@ -11,5 +11,5 @@ export const defaultTheme = {
     "black-500": "#112131",
     "black-700": "#0B1B2B",
     "black-900": "#071422",
-    "back-1000": "#040F1A"
+    "black-1000": "#040F1A"
 }
