@@ -14,7 +14,6 @@ interface UserProps {
 }
 
 export function Profile( { user }: UserProps) {
-    console.log('console do profile:',user)
     return(
         <Container>
             <Image src={user.avatar_url} />

@@ -10,11 +10,11 @@ export function Home() {
     useEffect(() => {
         async function fetchUser() {
             const octokit = new Octokit({
-                auth: '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'
+                auth: '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'
             })
             try {
                 const response = await octokit.request('https://api.github.com/users/eduaardofranco', {
-                    username: 'EDUAARDOFRANCO',
+                    username: 'eduaardofranco',
                     headers : {
                         'X-GitHub-Api-Version': '2022-11-28'
                     }
