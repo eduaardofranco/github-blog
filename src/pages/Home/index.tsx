@@ -10,7 +10,7 @@ export function Home() {
     useEffect(() => {
         async function fetchUser() {
             const octokit = new Octokit({
-                auth: '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'
+                auth: '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'
             })
             try {
                 const response = await octokit.request('https://api.github.com/users/eduaardofranco', {
