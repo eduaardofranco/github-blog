@@ -3,32 +3,45 @@ import { FaBuilding, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { Container, Details, Image, Link, Title } from './styles'
 import { MdPeopleAlt } from 'react-icons/md'
 
-export function Profile() {
+interface UserProps {
+    avatar_url: string
+    name: string
+    bio: string
+    login: string
+    company: string
+    followers: string
+    html_url: string
+}
+
+export function Profile( { user }: UserProps) {
+    console.log('console do profile:',user)
     return(
         <Container>
-            <Image src="https://github.com/eduaardofranco.png" />
+            <Image src={user.avatar_url} />
             <Details>
                 <Title>
                     <h2>Eduardo Franco</h2>
-                    <a href="https://github.com/eduaardofranco" target='blank'>
+                    <a href={user.html_url} target='blank'>
                         Github
                         <FaExternalLinkAlt />
                     </a>
 
                 </Title>
-                <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
+                <p>{user.bio}</p>
                 <div className="links">
                     <Link>
                         <FaGithub />
-                        <span>eduaardofranco</span>
+                        <span>{user.login}</span>
                     </Link>
-                    <Link>
-                        <FaBuilding />
-                        <span>Rocketseat</span>
-                    </Link>
+                    {user.company && (
+                        <Link>
+                            <FaBuilding />
+                            <span>{user.company}</span>
+                        </Link>
+                    )}
                     <Link>
                         <MdPeopleAlt />
-                        <span>32 followers</span>
+                        <span>{user.followers}</span>
                     </Link>
                 </div>
             </Details>
