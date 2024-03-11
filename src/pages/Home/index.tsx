@@ -45,6 +45,7 @@ export function Home() {
                   })
 
                 setIssues(response.data.items)
+                console.log(response.data.items)
             } catch (error) {
                 console.log('Error fetching issues: ',error)
             }
