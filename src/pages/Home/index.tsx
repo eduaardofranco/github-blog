@@ -1,7 +1,7 @@
 import { Profile } from "../../components/Profile";
 import { Search } from "../../components/Search";
 import { Post } from "../../components/Post";
-import { Container } from './styles'
+import { Container, SearchContainer, Title } from './styles'
 import { useEffect, useState } from "react";
 import { Octokit } from "octokit";
 import { api } from "../../lib/axios";
@@ -57,7 +57,16 @@ export function Home() {
     return(
         <Container>
             <Profile user={user} />
-            <Search />
+            <SearchContainer>
+                <Title>
+                    <h2>Publishes</h2>
+                    <span>{issues.length} publishes</span>
+                </Title>
+                <input
+                    type="search"
+                    placeholder="Search content"
+                />
+        </SearchContainer>
             <div className="publishes">
                 {
                     issues && issues.map(item => (
