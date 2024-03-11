@@ -9,8 +9,9 @@ export function Home() {
     const [user, setUser] = useState({})
     useEffect(() => {
         async function fetchUser() {
+            const profileAPIKey = import.meta.env.PROFILE_API_KEY
             const octokit = new Octokit({
-                auth: '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'
+                auth: profileAPIKey
             })
             try {
                 const response = await octokit.request('https://api.github.com/users/eduaardofranco', {
