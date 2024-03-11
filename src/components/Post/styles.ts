@@ -5,6 +5,8 @@ export const Container = styled(Link)`
     background: ${props => props.theme['black-500']};
     padding: 3rem;
     border-radius: 10px;
+    color: ${props => props.theme['gray-500']};
+    text-decoration: none;
 
 `;
 export const Title = styled.div`
