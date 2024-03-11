@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const Container = styled.div`
+export const Container = styled(Link)`
     background: ${props => props.theme['black-500']};
     padding: 3rem;
     border-radius: 10px;
@@ -10,6 +11,8 @@ export const Title = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    height: 60px;
+    overflow: hidden;
     h3 {
         color: ${props => props.theme['white']};
         line-height: 3rem;

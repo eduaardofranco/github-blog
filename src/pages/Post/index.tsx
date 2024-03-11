@@ -1,9 +1,11 @@
 import { IoIosArrowBack } from "react-icons/io";
 import { Container, Content, HeaderBox, ItemLink, Navigation } from "./styles";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { FaCalendarDay, FaComment, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export function Post() {
+    const { url } = useParams()
+    console.log(url)
     return(
         <Container>
             <HeaderBox>
