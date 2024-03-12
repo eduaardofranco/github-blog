@@ -1,5 +1,4 @@
 import { Profile } from "../../components/Profile";
-import { Search } from "../../components/Search";
 import { Post } from "../../components/Post";
 import { Container, SearchContainer, Title } from './styles'
 import { useEffect, useState } from "react";
@@ -33,7 +32,7 @@ export function Home() {
 
     async function fetchIssues(text?: string) {
         let query = 'repo:eduaardofranco/github-blog'
-        if(text) query = `repo:eduaardofranco/github-blog: ${text}`
+        if(text) query = `${text} repo:eduaardofranco/github-blog`
         try {
               
             const response = await api.get('search/issues', {
@@ -60,7 +59,7 @@ export function Home() {
     useEffect(() => {
         const delayDebounce = setTimeout(() => {
             fetchIssues(search)
-        }, 2000)
+        }, 500)
     
         return () => clearTimeout(delayDebounce)
       }, [search])
@@ -82,7 +81,7 @@ export function Home() {
                 {
                     issues && issues.map(item => (
                         <Post
-                            key={item.url}
+                            key={item.number}
                             item={item}
                         />
                     ))

@@ -18,6 +18,7 @@ export const SearchContainer = styled.div`
         background: ${props => props.theme['black-1000']};
         border: 1px solid ${props => props.theme['black-300']};
         border-radius: 6px;
+        color: ${props => props.theme['gray-500']};
         font-size: 1.6rem;
         padding: 1rem;
         width: 100%;

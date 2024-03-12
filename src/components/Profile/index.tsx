@@ -4,43 +4,46 @@ import { Container, Details, Image, Link, Title } from './styles'
 import { MdPeopleAlt } from 'react-icons/md'
 
 interface UserProps {
-    avatar_url: string
-    name: string
-    bio: string
-    login: string
-    company: string
-    followers: string
-    html_url: string
+    user: {
+        avatar_url: string
+        name: string
+        bio: string
+        login: string
+        company: string
+        followers: string
+        html_url: string
+    }
 }
 
 export function Profile( { user }: UserProps) {
+    const { avatar_url, name, bio, login, company, followers, html_url } = user
     return(
         <Container>
-            <Image src={user.avatar_url} />
+            <Image src={avatar_url} />
             <Details>
                 <Title>
-                    <h2>Eduardo Franco</h2>
-                    <a href={user.html_url} target='blank'>
+                    <h2>{name}</h2>
+                    <a href={html_url} target='blank'>
                         Github
                         <FaExternalLinkAlt />
                     </a>
 
                 </Title>
-                <p>{user.bio}</p>
+                <p>{bio}</p>
                 <div className="links">
                     <Link>
                         <FaGithub />
-                        <span>{user.login}</span>
+                        <span>{login}</span>
                     </Link>
-                    {user.company && (
+                    {company && (
                         <Link>
                             <FaBuilding />
-                            <span>{user.company}</span>
+                            <span>{company}</span>
                         </Link>
                     )}
                     <Link>
                         <MdPeopleAlt />
-                        <span>{user.followers}</span>
+                        <span>{followers}</span>
                     </Link>
                 </div>
             </Details>
