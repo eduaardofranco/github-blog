@@ -7,7 +7,7 @@ export function Post( { item } ) {
         <Container to={`/post/${item.number}`}>
             <Title>
                 <h3>{item.title}</h3>
-                <span>{formatDistanceToNow(item.updated_at)}</span>
+                <span>{formatDistanceToNow(item.created_at)} ago</span>
             </Title>
             <Description>
                 {item.body}
